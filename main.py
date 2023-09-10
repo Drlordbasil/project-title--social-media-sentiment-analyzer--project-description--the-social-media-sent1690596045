@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 
 class SentimentAnalyzer:
     def __init__(self, consumer_key: str, consumer_secret: str, access_token: str, access_token_secret: str) -> None:
-        self.api = self.authenticate(consumer_key, consumer_secret, access_token, access_token_secret)
+        self.api = self.authenticate(
+            consumer_key, consumer_secret, access_token, access_token_secret)
 
     def authenticate(self, consumer_key: str, consumer_secret: str, access_token: str, access_token_secret: str) -> tweepy.API:
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -51,5 +52,6 @@ if __name__ == "__main__":
     access_token = input("Enter your access token: ")
     access_token_secret = input("Enter your access token secret: ")
 
-    sentiment_analyzer = SentimentAnalyzer(consumer_key, consumer_secret, access_token, access_token_secret)
+    sentiment_analyzer = SentimentAnalyzer(
+        consumer_key, consumer_secret, access_token, access_token_secret)
     sentiment_analyzer.run()
